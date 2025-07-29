@@ -163,7 +163,7 @@ final ThemeData todoDarkTheme = ThemeData(
 class AppColors extends Color {
   AppColors(super.value);
 
-  static const Color scaffoldBackgroundColor = Color(0x1E1E1E);
+  static const Color scaffoldBackgroundColor = Color(0xFF191C20);
   static const Color primary = Color(0xFF36454F);  // 대표적인 차콜색 (Charcoal)
 
   static const Color secondary = Color(0xFFE2F9F9);
@@ -175,8 +175,13 @@ class AppColors extends Color {
 
   static const Color darkBg = Color(0xFF121212);
   static const Color darkSurface = Color(0xFF1E1E1E);
+  static const Color floatingActionButtonColor = Color(0xFFFF6B6B);
+
+
 
   static const int _grayPrimaryValue = 0xFF848487;
+
+
 
   static const MaterialColor poetryClientGrey = MaterialColor(
     _grayPrimaryValue,
