@@ -4,13 +4,30 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/design/first_theme.dart';
 
 class TodoMainPage extends ConsumerStatefulWidget {
-  const TodoMainPage({super.key});
+  const TodoMainPage({super.key, required this.child, required this.currentIndex});
+
+  final Widget child;
+  final int currentIndex;
 
   @override
   ConsumerState createState() => _TodoMainPageState();
 }
 
 class _TodoMainPageState extends ConsumerState<TodoMainPage> {
+
+  late PageController _controller;
+  int _currentPage = 0;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = PageController(initialPage: _currentPage);
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,16 +60,13 @@ class _TodoMainPageState extends ConsumerState<TodoMainPage> {
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 2.0),
-
                       child: Icon(
                         Icons.search_outlined,
                         color: Colors.white,
                       ),
-
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 2.0),
-
                       child: Icon(
                         Icons.home_outlined,
                         color: Colors.white,
@@ -60,7 +74,6 @@ class _TodoMainPageState extends ConsumerState<TodoMainPage> {
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 2.0),
-
                       child: Icon(
                         Icons.menu,
                         color: Colors.white,
@@ -71,13 +84,12 @@ class _TodoMainPageState extends ConsumerState<TodoMainPage> {
               ),
 
               //body widget
-              Container(
+              Column(
+                children: [
+                  //TODO : 행성 뷰가 들어갈 영영의 구현
 
 
-                child: Column(
-
-                  children: [],
-                ),
+                ],
               )
             ],
           ),
